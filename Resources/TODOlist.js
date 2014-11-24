@@ -1,13 +1,14 @@
-TODOList = {};
+TODOlist = {};
 
-TODOList.view;
-
+TODOlist.init = function(){
+	
+};
 
 //procedures that calls the database and process the data and creates table view row
-TODOList.processData = function(selection){
+TODOlist.processData = function(selection){
 	
 	var data; 
-	Ti.include("TODOdata");
+	Ti.include("TODOdata.js");
 	TODOdata.init();
 	
 	
@@ -64,9 +65,9 @@ TODOList.processData = function(selection){
 
 
 //procedure that creates the table view  
-TODOList.createView = function( dataSelection ){
+TODOlist.createView = function( self,dataSelection ){
 		
-	var data = TODOList.processData(dataSelection);
+	var data = TODOlist.processData(dataSelection);
 	
 	var search = Titanium.UI.createSearchBar({
 		barColor:'#385292',
@@ -87,24 +88,24 @@ TODOList.createView = function( dataSelection ){
 	});
 	
 	// create table view
-	var tableview = Titanium.UI.createTableView({
+	var tableView = Titanium.UI.createTableView({
 		data:data,
 		search:search,
 		searchHidden:true
 	});
 	
 	// create table view event listener
-	tableview.addEventListener('click', function(e)
+	tableView.addEventListener('click', function(e)
 	{
 		if (e.rowData.test)
 		{
 			var win = Ti.UI.createWindow({ });
 			var ExampleWindow = require(e.rowData.test);
 			win = new ExampleWindow();
-			_args.containingTab.open(win,{animated:true});
+			self.containingTab.open(win,{animated:true});
 		}
 	});
 	
-	
+	return tableView;
 	
 };

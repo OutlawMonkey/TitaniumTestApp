@@ -1,8 +1,8 @@
-#appname: TitaniumTestApp
-#publisher: pacopena84
-#url: http://www.fjpenamtz.com
-#image: appicon.png
-#appid: com.fjpenamtz.TitaniumTestApp
-#desc: undefined
-#type: mobile
-#guid: 1ae4461e-65f0-4d22-9e23-84546ce357df
+#appname:TestApp
+#publisher:pacopena84
+#url:http://www.fjpenamtz.com
+#image:appicon.png
+#appid:com.fjpenamtz.TestApp
+#desc:undefined
+#type:mobile
+#guid:1ae4461e-65f0-4d22-9e23-84546ce357df

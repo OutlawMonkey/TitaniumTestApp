@@ -4,14 +4,14 @@ Titanium.UI.setBackgroundColor('#000');
 // create tab group
 var tabGroup = Titanium.UI.createTabGroup();
 
+var displayLists = require('TODOdisplayLists');
 
-//
-// create base UI tab and root window
-//
 
-var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
-    title:'Tab 1',
+var win1 = Ti.UI.createWindow({ });
+
+win1 = new displayLists("TestApp");
+
+var tab1 = Titanium.UI.createTab({
     window:win1
 });
 

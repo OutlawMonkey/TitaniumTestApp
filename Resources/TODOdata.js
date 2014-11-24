@@ -22,7 +22,7 @@ TODOdata.updateDB = function(dataField,dataArray){
 			
 			var validationResult = db.execute('SELECT * FROM todoItems TI WHERE TI.name =?',dataArray[0]);
 			
-			if (validationResult.field(0) == null){
+			if (validationResult.rowCount == 0){
 				
 				db.execute('INSERT INTO todoItems VALUES (?,?,?,?,?)',
 						dataArray[0],
@@ -61,7 +61,7 @@ TODOdata.dataSelect = function(dataSelect){
 			
 			queryData = db.execute('SELECT * FROM todoItems TI WHERE TI.status = 0');
 			
-			if (validationResult.field(0) == null){
+			if (queryData.rowCount == 0){
 				
 				alert('You have no TODO added');
 							
@@ -87,7 +87,7 @@ TODOdata.dataSelect = function(dataSelect){
 			
 			queryData = db.execute('SELECT * FROM todoItems TI WHERE TI.status = 1');
 			
-			if (validationResult.field(0) == null){
+			if (queryData.rowCount == 0){
 				
 				alert('You have no TODO added');
 							
