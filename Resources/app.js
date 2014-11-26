@@ -14,6 +14,7 @@ win1 = new displayLists("TestApp");
 var tab1 = Titanium.UI.createTab({
     window:win1
 });
+win1.containingTab = tab1;
 
 //
 //  add tabs

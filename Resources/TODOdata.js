@@ -5,7 +5,7 @@ TODOdata.init = function(){
 	
 	if (Ti.Database.name != 'TODOdata'){
 		var db = Ti.Database.open('TODOdata');
-		db.execute('CREATE TABLE IF NOT EXISTS todoItems (name TEXT DEFAULT NULL, content TEXT DEFAULT NULL, dateMod DATE DEFAULT NULL, status INTEGER DEFAULT 0, imageFile TEXT DEFAULT NULL ) ');
+		db.execute('CREATE TABLE IF NOT EXISTS todoItems (name TEXT DEFAULT NULL, content TEXT DEFAULT NULL, dateMod TEXT DEFAULT NULL, status INTEGER DEFAULT 0, imageFile TEXT DEFAULT NULL ) ');
 		
 	}else{
 		Ti.API.info("ya existia la base de datos");

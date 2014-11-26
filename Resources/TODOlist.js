@@ -19,8 +19,8 @@ TODOlist.processData = function(selection){
 	 	var tableViewRow = Ti.UI.createTableViewRow({
 	 			height:100,
 	 			hasChild:true,
-	 			content: tempArray[1],
-	 			status:tempArray[3],
+	 			data: tempArray,
+	 			title:tempArray[0],
 	 			test:'TODOdetail'
 	 		});
 	 	
@@ -101,7 +101,7 @@ TODOlist.createView = function( self,dataSelection ){
 		{
 			var win = Ti.UI.createWindow({ });
 			var ExampleWindow = require(e.rowData.test);
-			win = new ExampleWindow();
+			win = new ExampleWindow(e.rowData.title,e.rowData.data);
 			self.containingTab.open(win,{animated:true});
 		}
 	});
